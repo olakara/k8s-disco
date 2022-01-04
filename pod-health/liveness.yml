@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-webserver
+spec:
+  containers:
+    - name: my-webserver
+      image: nginx:alpine
+      livenessProbe:
+        httpGet:          
+          path: /index.html
+          port: 80
+        initialDelaySeconds: 15
+        timeoutSeconds: 2
+        periodSeconds: 5
+        failureThreshold: 1             
+      ports:
+        - containerPort: 80
+      resources:
+         limits:
+           memory: 512Mi
+           cpu: "1"
+         requests:
+           memory: 256Mi
+           cpu: "0.2"
