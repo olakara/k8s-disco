@@ -7,9 +7,13 @@
 `kubectl get deployments -l app=nginx`
 
 ### Scale command
-`kubectl scale deployment <deployment-name>` --replicas=3
+`kubectl scale deployment <deployment-name> --replicas=3`
 
 `kubectl scale -f deployment.yml --replicas=3`
+
+### Using create command to create deployment
+`kubectl create -f <file-name>.yml --save-config`
+- `--save-config` option is used to make sure the configurations are saved back to the YAML file.
 
 Notes:
 - Use "create" or "apply" options to deploy a deployment.
