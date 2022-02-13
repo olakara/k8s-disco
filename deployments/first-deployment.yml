@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myapp
+  name: my-webserver
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: myapp
+      app: my-webserver
   template:
     metadata:
       labels:
-        app: myapp
+        app: my-webserver
     spec:
       containers:
-      - name: myapp
+      - name: my-webserver
         image: nginx:alpine
         resources:
           limits:

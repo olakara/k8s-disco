@@ -7,6 +7,6 @@ spec:
     app: my-webserver
   ports:
   - port: 80
-    targetPort: 8080
+    targetPort: 80
 
 
