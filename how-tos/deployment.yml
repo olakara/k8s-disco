@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-webserver
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: my-webserver
+  template:
+    metadata:
+      labels:
+        app: my-webserver
+    spec:
+      containers:
+      - name: my-webserver
+        image: nginx:alpine
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
